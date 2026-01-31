@@ -1,4 +1,4 @@
-import{d as B,h as j}from"./assets/exercises_card-CiTTasle.js";const n={filters:document.querySelector(".filters"),navButtons:document.querySelector(".nav-buttons"),musclesBtn:document.querySelector(".muscles-btn"),exercisesTitle:document.querySelector(".exercises-title"),searchForm:document.querySelector(".search-form"),loadMoreBtn:document.querySelector(".load-more-btn"),quoteContainer:document.querySelector(".quote"),pagination:document.querySelector(".pagination"),exercises:document.querySelector(".exercises-div")};let C=window.innerWidth<768?9:12,F=window.innerWidth<768?8:10,a=1,u="Muscles",w="Muscles",S="",g="",y="",p=[];B(n.quoteContainer);h();n.musclesBtn.classList.add("active-btn");n.filters.addEventListener("click",_);n.exercises.addEventListener("click",I);n.searchForm.addEventListener("input",N);var L;(L=n.loadMoreBtn)==null||L.addEventListener("click",loadMore);async function h(e=!0){e&&(a=1,n.exercises.innerHTML="");let t=`https://your-energy.b.goit.study/api/filters?filter=${u}&page=${a}&limit=${C}`;w.trim()&&(t+=`&name=${w}`);const r=await(await fetch(t)).json();if(!r.results.length){$();return}H(r.results),E(r.totalPages)}function H(e){const t=`
+import{d as B,h as j}from"./assets/exercises_card-NyUQigKq.js";const n={filters:document.querySelector(".filters"),navButtons:document.querySelector(".nav-buttons"),musclesBtn:document.querySelector(".muscles-btn"),exercisesTitle:document.querySelector(".exercises-title"),searchForm:document.querySelector(".search-form"),loadMoreBtn:document.querySelector(".load-more-btn"),quoteContainer:document.querySelector(".quote"),pagination:document.querySelector(".pagination"),exercises:document.querySelector(".exercises-div")};let C=window.innerWidth<768?9:12,F=window.innerWidth<768?8:10,a=1,u="Muscles",w="Muscles",S="",g="",y="",p=[];B(n.quoteContainer);h();n.musclesBtn.classList.add("active-btn");n.filters.addEventListener("click",_);n.exercises.addEventListener("click",I);n.searchForm.addEventListener("input",N);var L;(L=n.loadMoreBtn)==null||L.addEventListener("click",loadMore);async function h(e=!0){e&&(a=1,n.exercises.innerHTML="");let t=`https://your-energy.b.goit.study/api/filters?filter=${u}&page=${a}&limit=${C}`;w.trim()&&(t+=`&name=${w}`);const r=await(await fetch(t)).json();if(!r.results.length){$();return}H(r.results),E(r.totalPages)}function H(e){const t=`
     <ul class="exercises">
       ${e.map(({name:s,filter:r,imgURL:i})=>`
             <li class="exercise">
@@ -47,7 +47,7 @@ import{d as B,h as j}from"./assets/exercises_card-CiTTasle.js";const n={filters:
                     <span class="rating">
                       ${i}
                       <svg class="star-icon" width="14" height="14">
-                        <use href="/js_university_project0.1/symbol-defs.svg#icon-star"></use>
+                        <use href="/js_university_project0.1/icons.svg#icon-star"></use>
                       </svg>
                     </span>
                   </div>
@@ -58,14 +58,14 @@ import{d as B,h as j}from"./assets/exercises_card-CiTTasle.js";const n={filters:
                     class="details-link">
                     Start
                     <svg class="arrow-icon" width="16" height="16">
-                      <use href="/js_university_project0.1/symbol-defs.svg#icon-arrow"></use>
+                      <use href="/js_university_project0.1/icons.svg#icon-arrow"></use>
                     </svg>
                   </button>
                 </div>
 
                 <div class="exercise-header">
                   <svg class="icon-man" fill="white" width="24" height="24">
-                    <use href="/js_university_project0.1/symbol-defs.svg#icon-run"></use>
+                    <use href="/js_university_project0.1/icons.svg#icon-run"></use>
                   </svg>
                   <h2 class="exercise-name">
                     ${d(s)}
