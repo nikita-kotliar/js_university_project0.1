@@ -187,7 +187,7 @@ async function makeExercisesCards(response) {
                     <span class="rating">
                       ${rating}
                       <svg class="star-icon" width="14" height="14">
-                        <use href="/js_university_project0.1/symbol-defs.svg#icon-star"></use>
+                        <use href="/js_university_project0.1/icons.svg#icon-star"></use>
                       </svg>
                     </span>
                   </div>
@@ -198,14 +198,14 @@ async function makeExercisesCards(response) {
                     class="details-link">
                     Start
                     <svg class="arrow-icon" width="16" height="16">
-                      <use href="/js_university_project0.1/symbol-defs.svg#icon-arrow"></use>
+                      <use href="/js_university_project0.1/icons.svg#icon-arrow"></use>
                     </svg>
                   </button>
                 </div>
 
                 <div class="exercise-header">
                   <svg class="icon-man" fill="white" width="24" height="24">
-                    <use href="/js_university_project0.1/symbol-defs.svg#icon-run"></use>
+                    <use href="/js_university_project0.1/icons.svg#icon-run"></use>
                   </svg>
                   <h2 class="exercise-name">
                     ${capitalize(name)}

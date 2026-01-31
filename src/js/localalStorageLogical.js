@@ -52,14 +52,14 @@ async function getQuote() {
 
 const renderQuoteHTML = (quote, author) => `
   <svg width="32" height="32" class="quote-text-icon">
-    <use href="/js_university_project0.1/symbol-defs.svg#icon-run"></use>
+    <use href="/js_university_project0.1/icons.svg#icon-run"></use>
   </svg>
   <div>
     <h3 class="main-quote-title">Quote of the day</h3>
     <p class="main-quote-text">${quote}</p>
     <p class="main-quote-author">${author}</p>
     <svg width="24" height="24" class="quote-text-icon-commas">
-      <use href="/js_university_project0.1/symbol-defs.svg#icon-commas"></use>
+      <use href="/js_university_project0.1/icons.svg#icon-commas"></use>
     </svg>
   </div>
 `;

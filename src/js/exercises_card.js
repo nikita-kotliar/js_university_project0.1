@@ -37,7 +37,7 @@ export default function handlerStartBtn(
   if (isFavourite === true) {
     document.querySelector('.add-favourite-btn').innerHTML = `Remove from
           <svg class="heart-icon">
-            <use href="/js_university_projectNew/symbol-defs.svg#icon-heart"></use>
+            <use href="/js_university_projectNew/icons.svg#icon-heart"></use>
           </svg>`;
   }
 }
@@ -50,7 +50,7 @@ function renderModal(data, isFavouritePage) {
     <div class="exr-card-cont">
       <button name="close" id="close-card" type="button" class="close-card-button">
       <svg class="close-card-icon"">
-        <use href="/js_university_project0.1/symbol-defs.svg#icon-x"></use>
+        <use href="/js_university_project0.1/icons.svg#icon-x"></use>
       </svg>
       </button>
       <img src="${data.gifUrl}" alt="example-img" class="exr-image" />
@@ -63,27 +63,27 @@ function renderModal(data, isFavouritePage) {
           </li>
           <li>
             <svg class="star-rating-icon" width="14px" height="14px">
-              <use href="/js_university_project0.1/symbol-defs.svg#icon-star"></use>
+              <use href="/js_university_project0.1/icons.svg#icon-star"></use>
             </svg>
           </li>
           <li>
             <svg class="star-rating-icon" width="14px" height="14px">
-              <use href="/js_university_project0.1/symbol-defs.svg#icon-star"></use>
+              <use href="/js_university_project0.1/icons.svg#icon-star"></use>
             </svg>
           </li>
           <li>
             <svg class="star-rating-icon" width="14px" height="14px">
-              <use href="/js_university_project0.1/symbol-defs.svg#icon-star"></use>
+              <use href="/js_university_project0.1/icons.svg#icon-star"></use>
             </svg>
           </li>
           <li>
             <svg class="star-rating-icon" width="14px" height="14px">
-              <use href="/js_university_project0.1/symbol-defs.svg#icon-star"></use>
+              <use href="/js_university_project0.1/icons.svg#icon-star"></use>
             </svg>
           </li>
           <li>
             <svg class="star-rating-icon" width="14px" height="14px">
-              <use href="/js_university_project0.1/symbol-defs.svg#icon-star"></use>
+              <use href="/js_university_project0.1/icons.svg#icon-star"></use>
             </svg>
           </li>
         </ul>
@@ -121,7 +121,7 @@ function renderModal(data, isFavouritePage) {
         <button name="add-favorurite" class="add-favourite-btn">
           Add to favourites
           <svg class="heart-icon" width="20px" height="20px">
-            <use href="/js_university_project0.1/symbol-defs.svg#icon-heart"></use>
+            <use href="/js_university_project0.1/icons.svg#icon-heart"></use>
           </svg>
         </button>
         <button name="rating" class="give-rating-btn">Give a rating</button>
@@ -141,14 +141,14 @@ function renderModal(data, isFavouritePage) {
       localStorageLogic.setFav(savedExercises);
       addFavBtn.innerHTML = `Remove from
           <svg class="heart-icon" width="20px" height="20px">
-            <use href="/js_university_project0.1/symbol-defs.svg#icon-heart"></use>
+            <use href="/js_university_project0.1/icons.svg#icon-heart"></use>
           </svg>`;
       isFavourite = true;
     } else {
       localStorageLogic.removeFromFav(data._id);
       addFavBtn.innerHTML = `Add to favourite
           <svg class="heart-icon" width="20px" height="20px">
-            <use href="/js_university_project0.1/symbol-defs.svg#icon-heart"></use>
+            <use href="/js_university_project0.1/icons.svg#icon-heart"></use>
           </svg>`;
       isFavourite = false;
     }

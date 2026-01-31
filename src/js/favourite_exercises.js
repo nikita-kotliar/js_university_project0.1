@@ -61,7 +61,7 @@ function renderCards(cards) {
                     data-id="${_id}"
                     class="trash-btn">
                     <svg width="16" height="16">
-                      <use href="/js_university_project0.1/symbol-defs.svg#icon-trash"></use>
+                      <use href="/js_university_project0.1/icons.svg#icon-trash"></use>
                     </svg>
                   </button>
                 </div>
@@ -72,14 +72,14 @@ function renderCards(cards) {
                   class="details-link">
                   Start
                   <svg width="16" height="16">
-                    <use href="/js_university_project0.1/symbol-defs.svg#icon-arrow"></use>
+                    <use href="/js_university_project0.1/icons.svg#icon-arrow"></use>
                   </svg>
                 </button>
               </div>
 
               <div class="exercise-header">
                 <svg width="24" height="24">
-                  <use href="/js_university_project0.1/symbol-defs.svg#icon-run"></use>
+                  <use href="/js_university_project0.1/icons.svg#icon-run"></use>
                 </svg>
                 <h2 class="exercise-name">${name}</h2>
               </div>
