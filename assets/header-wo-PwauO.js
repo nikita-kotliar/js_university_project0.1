@@ -152,4 +152,4 @@
       <use href="/js_university_project0.1/iconic.svg#icon-heart"></use>
     </svg>
   `,p()}),document.getElementById("close-card").onclick=h,d.onclick=r=>r.target===d&&h(),document.querySelector(".give-rating-btn").onclick=()=>{h(),K(e._id)}}function h(){d.classList.remove("card-is-open"),document.body.classList.remove("not-scrollable")}function W(e){document.querySelectorAll(".star-rating-icon").forEach((t,s)=>{s<Math.round(e)&&(t.style.fill="#eea10c")})}const V=document.querySelector(".mobile-menu"),z=document.querySelector(".open-mobile-menu-btn"),X=document.querySelector(".close-mobile-menu-btn"),k=document.querySelector(".mobile-menu-wrapper");V.addEventListener("click",e=>{e.stopPropagation()});const b=e=>{k.classList.toggle("is-open",e),document.body.classList.toggle("not-scrollable",e)};z.addEventListener("click",()=>b(!0));X.addEventListener("click",()=>b(!1));k.addEventListener("click",()=>b(!1));export{ee as a,D as b,Z as f,Y as h,te as p,F as r};
-//# sourceMappingURL=header-CRzwEqJ0.js.map
+//# sourceMappingURL=header-wo-PwauO.js.map
