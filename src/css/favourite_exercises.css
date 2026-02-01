@@ -39,6 +39,11 @@
   font-weight: 500;
 }
 
+.favourite_exercises .exercise-information .trash-btn svg {
+  stroke: var(--black-color);
+  fill: transparent;
+}
+
 .favourite_exercises .exercise-information .details-link {
   color: var(--black-color);
   display: flex;
