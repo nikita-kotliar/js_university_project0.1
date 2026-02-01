@@ -128,8 +128,12 @@
 
 @media (max-width: 767px) {
   .backdrop-container {
-    max-width: 335px;
+    width: 335px;
     padding: 40px 20px;
+  }
+  .form-send-btn {
+    padding: 12px 56px;
+    width: 100%;
   }
   #user-email {
     margin-top: 20px;
