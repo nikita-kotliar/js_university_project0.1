@@ -16,7 +16,7 @@
                     </button>`:`<span class="rating">
                       ${T}
                       <svg class="star-icon" width="14" height="14">
-                        <use href="/js_university_project0.1/symbol-defs.svg#icon-star"></use>
+                        <use href="/js_university_project0.1/iconic.svg#icon-star"></use>
                       </svg>
                     </span>`}
             </div>
@@ -24,14 +24,14 @@
             <button data-action="start" data-id="${i}" class="details-link">
               Start
               <svg width="16" height="16">
-                <use href="${t?"/js_university_project0.1/iconic.svg#icon-arrow":"/js_university_project0.1/symbol-defs.svg#icon-arrow"}"></use>
+                <use href="/js_university_project0.1/iconic.svg#icon-arrow"></use>
               </svg>
             </button>
           </div>
 
           <div class="exercise-header">
             <svg width="24" height="24">
-              <use href="${t?"/js_university_project0.1/iconic.svg#icon-run":"/js_university_project0.1/symbol-defs.svg#icon-run"}"></use>
+              <use href="/js_university_project0.1/iconic.svg#icon-run"></use>
             </svg>
             <h2 class="exercise-name">${r}</h2>
           </div>
@@ -152,4 +152,4 @@
       <use href="/js_university_project0.1/iconic.svg#icon-heart"></use>
     </svg>
   `,p()}),document.getElementById("close-card").onclick=h,d.onclick=r=>r.target===d&&h(),document.querySelector(".give-rating-btn").onclick=()=>{h(),K(e._id)}}function h(){d.classList.remove("card-is-open"),document.body.classList.remove("not-scrollable")}function W(e){document.querySelectorAll(".star-rating-icon").forEach((t,s)=>{s<Math.round(e)&&(t.style.fill="#eea10c")})}const V=document.querySelector(".mobile-menu"),z=document.querySelector(".open-mobile-menu-btn"),X=document.querySelector(".close-mobile-menu-btn"),k=document.querySelector(".mobile-menu-wrapper");V.addEventListener("click",e=>{e.stopPropagation()});const b=e=>{k.classList.toggle("is-open",e),document.body.classList.toggle("not-scrollable",e)};z.addEventListener("click",()=>b(!0));X.addEventListener("click",()=>b(!1));k.addEventListener("click",()=>b(!1));export{ee as a,D as b,Z as f,Y as h,te as p,F as r};
-//# sourceMappingURL=header-DV9_EKWw.js.map
+//# sourceMappingURL=header-DogsyWVa.js.map
