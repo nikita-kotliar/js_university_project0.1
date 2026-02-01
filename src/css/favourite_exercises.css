@@ -380,4 +380,7 @@
   .favourite_exercises .exercise-information {
     width: 100%;
   }
+  .favourite_exercises {
+    margin-top: 80px;
+  }
 }
