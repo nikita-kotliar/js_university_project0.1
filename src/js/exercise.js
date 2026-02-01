@@ -36,7 +36,7 @@ export function renderExercises(data, isFavourite) {
 
             <button data-action="start" data-id="${_id}" class="details-link">
               Start
-              <svg width="16" height="16">
+              <svg width="16" height="16" class="arrow-icon">
                 <use href="${isFavourite ? '/js_university_project0.1/iconic.svg#icon-arrow' : '/js_university_project0.1/iconic.svg#icon-arrow'}"></use>
               </svg>
             </button>
