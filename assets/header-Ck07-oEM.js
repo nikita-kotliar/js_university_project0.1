@@ -4,7 +4,7 @@
     &keyword=${s}
     &page=${i}
     &limit=${r}
-  `.replace(/\s+/g,"");return(await fetch(c)).json()}async function te(e){const t=await fetch("https://your-energy.b.goit.study/api/subscription",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:e})});if(t.status===409)throw new Error("EMAIL_EXISTS");if(!t.ok)throw new Error("REQUEST_FAILED");return await t.json()}async function O(){return(await fetch("https://your-energy.b.goit.study/api/quote")).json()}async function M(e,{email:t,rate:s,comment:i}){const r=`https://your-energy.b.goit.study/api/exercises/${e}/rating`;s=Number(s);const o=await fetch(r,{method:"PATCH",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:t,rate:s,review:i})});if(!o.ok){const c=await o.json();throw new Error(c.message||"Rating failed")}return o.json()}const S="userFavorites",_="dailyQuote",x="quoteTimestamp",A=864e5,g=()=>{try{const e=localStorage.getItem(S);return e?JSON.parse(e):[]}catch(e){return console.error("Failed to load favorites:",e.message),[]}},E=e=>{localStorage.setItem(S,JSON.stringify(e))},j=e=>g().some(t=>t._id===e),N=e=>{const t=g();t.some(s=>s._id===e._id)||(t.push(e),E(t))},q=e=>{const t=g().filter(s=>s._id!==e);E(t)},P=e=>j(e._id)?(q(e._id),!1):(N(e),!0);async function C(){const e=localStorage.getItem(_),t=localStorage.getItem(x);if(e&&t&&Date.now()-Number(t)<A)return JSON.parse(e);try{const s=await O();return localStorage.setItem(_,JSON.stringify(s)),localStorage.setItem(x,Date.now().toString()),s}catch(s){return console.error("Failed to fetch daily quote:",s),e?JSON.parse(e):{text:"No quote available",author:"Unknown"}}}function D(e,t){return e.map(s=>{let{_id:i,name:r,burnedCalories:o,bodyPart:c,target:m,time:I=3,rating:T}=s,B=`${o} / ${I} min`;return`
+  `.replace(/\s+/g,"");return(await fetch(c)).json()}async function te(e){const t=await fetch("https://your-energy.b.goit.study/api/subscription",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:e})});if(t.status===409)throw new Error("EMAIL_EXISTS");if(!t.ok)throw new Error("REQUEST_FAILED");return await t.json()}async function O(){return(await fetch("https://your-energy.b.goit.study/api/quote")).json()}async function M(e,{email:t,rate:s,comment:i}){const r=`https://your-energy.b.goit.study/api/exercises/${e}/rating`;s=Number(s);const o=await fetch(r,{method:"PATCH",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:t,rate:s,review:i})});if(!o.ok){const c=await o.json();throw new Error(c.message||"Rating failed")}return o.json()}const S="userFavorites",_="dailyQuote",w="quoteTimestamp",A=864e5,g=()=>{try{const e=localStorage.getItem(S);return e?JSON.parse(e):[]}catch(e){return console.error("Failed to load favorites:",e.message),[]}},E=e=>{localStorage.setItem(S,JSON.stringify(e))},j=e=>g().some(t=>t._id===e),N=e=>{const t=g();t.some(s=>s._id===e._id)||(t.push(e),E(t))},q=e=>{const t=g().filter(s=>s._id!==e);E(t)},P=e=>j(e._id)?(q(e._id),!1):(N(e),!0);async function C(){const e=localStorage.getItem(_),t=localStorage.getItem(w);if(e&&t&&Date.now()-Number(t)<A)return JSON.parse(e);try{const s=await O();return localStorage.setItem(_,JSON.stringify(s)),localStorage.setItem(w,Date.now().toString()),s}catch(s){return console.error("Failed to fetch daily quote:",s),e?JSON.parse(e):{text:"No quote available",author:"Unknown"}}}function D(e,t){return e.map(s=>{let{_id:i,name:r,burnedCalories:o,bodyPart:c,target:m,time:I=3,rating:T}=s,B=`${o} / ${I} min`;return`
         <li class="exercise-information" data-id-card="${i}">
           <div class="top-nav">
             <div>
@@ -23,7 +23,7 @@
 
             <button data-action="start" data-id="${i}" class="details-link">
               Start
-              <svg width="16" height="16">
+              <svg width="16" height="16" class="arrow-icon">
                 <use href="/js_university_project0.1/iconic.svg#icon-arrow"></use>
               </svg>
             </button>
@@ -38,11 +38,11 @@
 
           <ul class="exercise-details">
             <li><span>Burned calories:</span> ${B}</li>
-            <li><span>Body part:</span> ${t?c:w(c)}</li>
-            <li><span>Target:</span> ${t?m:w(m)}</li>
+            <li><span>Body part:</span> ${t?c:x(c)}</li>
+            <li><span>Target:</span> ${t?m:x(m)}</li>
           </ul>
         </li>
-      `}).join("")}function w(e){return e?e.charAt(0).toUpperCase()+e.slice(1):""}async function F(e){const{quote:t,author:s}=await C();e.innerHTML=` 
+      `}).join("")}function x(e){return e?e.charAt(0).toUpperCase()+e.slice(1):""}async function F(e){const{quote:t,author:s}=await C();e.innerHTML=` 
     <svg width="32" height="32" class="quote-text-icon">
       <use href="/js_university_project0.1/iconic.svg#icon-run"></use>
     </svg>
@@ -152,4 +152,4 @@
       <use href="/js_university_project0.1/iconic.svg#icon-heart"></use>
     </svg>
   `,p()}),document.getElementById("close-card").onclick=h,d.onclick=r=>r.target===d&&h(),document.querySelector(".give-rating-btn").onclick=()=>{h(),K(e._id)}}function h(){d.classList.remove("card-is-open"),document.body.classList.remove("not-scrollable")}function W(e){document.querySelectorAll(".star-rating-icon").forEach((t,s)=>{s<Math.round(e)&&(t.style.fill="#eea10c")})}const V=document.querySelector(".mobile-menu"),z=document.querySelector(".open-mobile-menu-btn"),X=document.querySelector(".close-mobile-menu-btn"),k=document.querySelector(".mobile-menu-wrapper");V.addEventListener("click",e=>{e.stopPropagation()});const b=e=>{k.classList.toggle("is-open",e),document.body.classList.toggle("not-scrollable",e)};z.addEventListener("click",()=>b(!0));X.addEventListener("click",()=>b(!1));k.addEventListener("click",()=>b(!1));export{ee as a,D as b,Z as f,Y as h,te as p,F as r};
-//# sourceMappingURL=header-DogsyWVa.js.map
+//# sourceMappingURL=header-Ck07-oEM.js.map
