@@ -77,7 +77,7 @@ export function checkStorage() {
 
   refs.root.innerHTML = `
     <ul class="fav_card_list">
-      ${renderExercises(cards)}
+      ${renderExercises(cards, true)}
     </ul>
     ${!isDesktop ? renderPagination(totalPages) : ''}
   `;

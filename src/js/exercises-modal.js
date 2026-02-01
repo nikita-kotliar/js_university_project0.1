@@ -23,7 +23,7 @@ function renderModal(data, initialFavourite) {
     <div class="exr-card-cont">
       <button name="close" id="close-card" type="button" class="close-card-button">
       <svg class="close-card-icon"">
-        <use href="/iconic.svg#icon-x"></use>
+        <use href="/js_university_project0.1/iconic.svg#icon-x"></use>
       </svg>
       </button>
       <img src="${data.gifUrl}" alt="example-img" class="exr-image" />
@@ -36,27 +36,27 @@ function renderModal(data, initialFavourite) {
           </li>
           <li>
             <svg class="star-rating-icon" width="14px" height="14px">
-              <use href="/iconic.svg#icon-star"></use>
+              <use href="/js_university_project0.1/iconic.svg#icon-star"></use>
             </svg>
           </li>
           <li>
             <svg class="star-rating-icon" width="14px" height="14px">
-              <use href="/iconic.svg#icon-star"></use>
+              <use href="/js_university_project0.1/iconic.svg#icon-star"></use>
             </svg>
           </li>
           <li>
             <svg class="star-rating-icon" width="14px" height="14px">
-              <use href="/iconic.svg#icon-star"></use>
+              <use href="/js_university_project0.1/iconic.svg#icon-star"></use>
             </svg>
           </li>
           <li>
             <svg class="star-rating-icon" width="14px" height="14px">
-              <use href="/iconic.svg#icon-star"></use>
+              <use href="/js_university_project0.1/iconic.svg#icon-star"></use>
             </svg>
           </li>
           <li>
             <svg class="star-rating-icon" width="14px" height="14px">
-              <use href="/iconic.svg#icon-star"></use>
+              <use href="/js_university_project0.1/iconic.svg#icon-star"></use>
             </svg>
           </li>
         </ul>
@@ -94,7 +94,7 @@ function renderModal(data, initialFavourite) {
         <button name="add-favorurite" class="add-favourite-btn">
           ${isFavourite ? 'Remove from' : 'Add to favourites'}
           <svg class="heart-icon" width="20px" height="20px">
-            <use href="/iconic.svg#icon-heart"></use>
+            <use href="/js_university_project0.1/iconic.svg#icon-heart"></use>
           </svg>
         </button>
         <button name="rating" class="give-rating-btn">Give a rating</button>
@@ -106,11 +106,10 @@ function renderModal(data, initialFavourite) {
   const favBtn = document.querySelector('.add-favourite-btn');
   favBtn.addEventListener('click', () => {
     isFavourite = toggleFavorite(data);
-    console.log(isFavourite);
     favBtn.innerHTML = `
     ${isFavourite ? 'Remove from' : 'Add to favourites'}
     <svg class="heart-icon" width="20" height="20">
-      <use href="/iconic.svg#icon-heart"></use>
+      <use href="/js_university_project0.1/iconic.svg#icon-heart"></use>
     </svg>
   `;
 

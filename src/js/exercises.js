@@ -149,7 +149,7 @@ async function fetchExercises(reset = true) {
   if (!data.results.length) return showNoResults();
 
   localResponse = data.results;
-  refs.exercises.innerHTML = renderExercises(data.results);
+  refs.exercises.innerHTML = renderExercises(data.results, false);
   renderPagination(data.totalPages);
 }
 
