@@ -28,7 +28,7 @@ export function renderExercises(data, isFavourite) {
                   : `<span class="rating">
                       ${rating}
                       <svg class="star-icon" width="14" height="14">
-                        <use href="/js_university_projectNew/symbol-defs.svg#icon-star"></use>
+                        <use href="/js_university_project0.1/symbol-defs.svg#icon-star"></use>
                       </svg>
                     </span>`
               }
@@ -37,14 +37,14 @@ export function renderExercises(data, isFavourite) {
             <button data-action="start" data-id="${_id}" class="details-link">
               Start
               <svg width="16" height="16">
-                <use href="${isFavourite ? '/js_university_project0.1/iconic.svg#icon-arrow' : '/js_university_projectNew/symbol-defs.svg#icon-arrow'}"></use>
+                <use href="${isFavourite ? '/js_university_project0.1/iconic.svg#icon-arrow' : '/js_university_project0.1/symbol-defs.svg#icon-arrow'}"></use>
               </svg>
             </button>
           </div>
 
           <div class="exercise-header">
             <svg width="24" height="24">
-              <use href="${isFavourite ? '/js_university_project0.1/iconic.svg#icon-run' : '/js_university_projectNew/symbol-defs.svg#icon-run'}"></use>
+              <use href="${isFavourite ? '/js_university_project0.1/iconic.svg#icon-run' : '/js_university_project0.1/symbol-defs.svg#icon-run'}"></use>
             </svg>
             <h2 class="exercise-name">${name}</h2>
           </div>
