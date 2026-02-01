@@ -105,7 +105,6 @@
     visibility: hidden;
     pointer-events: none;
     transform: translateX(110%);
-    transition: 1s ease-in-out;
   }
 
   .mobile-menu-wrapper.is-open {

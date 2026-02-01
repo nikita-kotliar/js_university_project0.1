@@ -1,29 +1,11 @@
 .favourite_exercises .exercise-information {
   padding: 16px;
   width: 405px;
-  height: 141px;
+  min-height: 141px;
   background: var(--full-white-color);
   border-radius: 15px;
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
-}
-.exercises-section .exercise-information::-webkit-scrollbar {
-  width: 4px;
-}
-
-.exercises-section .exercise-information::-webkit-scrollbar-thumb {
-  background-color: var(--black-color);
-  border-radius: 2px;
-}
-
-.exercises-section .exercise-information::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.exercises-section .exercise-information {
-  scrollbar-width: thin;
-  scrollbar-color: var(--black-color) transparent;
 }
 
 .favourite_exercises .exercise-information .top-nav {
@@ -183,7 +165,7 @@
   margin-top: 18px;
 }
 
-.favourite_exercises .scrollbar_custom {
+.favourite_exercises .container-fav {
   height: calc(100vh - 108px - 88px);
   min-height: 353px;
   width: 100%;
@@ -191,18 +173,18 @@
   
 }
 
-.favourite_exercises .scrollbar_custom::-webkit-scrollbar {
+.favourite_exercises .container-fav::-webkit-scrollbar {
   width: 8px;
   background-color: var(--black-10);
 }
 
-.favourite_exercises .scrollbar_custom::-webkit-scrollbar-thumb {
+.favourite_exercises .container-fav::-webkit-scrollbar-thumb {
   color: var(--black-10);
   background-color: var(--black-color);
   border-radius: 10px;
 }
 
-.favourite_exercises .scrollbarcustom::-webkit-scrollbar-track {
+.favourite_exercises .container-fav::-webkit-scrollbar-track {
   background-color: var(--black-10);
 }
 .favourite_exercises .favorites-container {
@@ -273,12 +255,21 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  border-radius: 20px;
 }
 .favourite_exercises .section_title {
   font-size: 44px;
   line-height: 48px;
   font-weight: 400;
   margin-bottom: 32px;
+}
+
+.favourite_exercises .pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 15px;
 }
 
 .favourite_exercises .no_cards_wrapper {
@@ -320,7 +311,7 @@
 
 
 @media (max-width: 1439px) {
-  .favourite_exercises .scrollbar_custom .no_cards_wrapper {
+  .favourite_exercises .container-fav .no_cards_wrapper {
     margin: 0;
   }
   .favourite_exercises .pagination-cards {
@@ -337,7 +328,7 @@
     width: 100%;
   }
 
-  .favourite_exercises .scrollbar_custom {
+  .favourite_exercises .container-fav {
     height: unset;
     max-height: unset;
     overflow-y: unset;

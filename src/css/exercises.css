@@ -335,31 +335,12 @@
 .exercises-section .exercise-information {
   padding: 16px;
   width: 442px;
-  height: 141px;
+  min-height: 141px;
   background: var(--full-white-color);
   border-radius: 15px;
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
 }
-.exercises-section .exercise-information::-webkit-scrollbar {
-  width: 4px;
-}
-
-.exercises-section .exercise-information::-webkit-scrollbar-thumb {
-  background-color: var(--black-color);
-  border-radius: 2px;
-}
-
-.exercises-section .exercise-information::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.exercises-section .exercise-information {
-  scrollbar-width: thin;
-  scrollbar-color: var(--black-color) transparent;
-}
-
 
 .exercises-section .exercise-information .top-nav {
   display: flex;
@@ -527,8 +508,10 @@
     margin-top: 20px;
   }
   .exercises-section .exercise {
-    width: 335px;
-    height: 225px;
+    max-width: 335px;
+    max-height: 225px;
+    width: 100%;
+    height: auto;
   }
   .exercises-section .exercise img{
     height: unset;
@@ -561,5 +544,10 @@
   .exercises-section .pagination {
     width: 100%;
     flex-wrap: wrap;
+  }
+}
+@media (max-width: 374px) {
+  .exercises-section .quote-text-icon-commas {
+    display: none;
   }
 }

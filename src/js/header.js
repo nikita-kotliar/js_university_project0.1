@@ -1,20 +1,7 @@
+const mobileMenu = document.querySelector('.mobile-menu');
 const openMenuButton = document.querySelector('.open-mobile-menu-btn');
 const closeMenuButton = document.querySelector('.close-mobile-menu-btn');
 const mobileMenuWrapper = document.querySelector('.mobile-menu-wrapper');
-const mobileMenu = document.querySelector('.mobile-menu');
-
-openMenuButton.addEventListener('click', () => {
-  mobileMenuWrapper.classList.add('is-open');
-  document.body.classList.add('not-scrollable');
-});
-
-closeMenuButton.addEventListener('click', () => {
-  closeMenu();
-});
-
-mobileMenuWrapper.addEventListener('click', () => {
-  closeMenu();
-});
 
 mobileMenu.addEventListener('click', e => {
   e.stopPropagation();
@@ -25,3 +12,12 @@ function closeMenu() {
   document.body.classList.remove('not-scrollable');
 }
 
+
+const toggleMenu = isOpen => {
+  mobileMenuWrapper.classList.toggle('is-open', isOpen);
+  document.body.classList.toggle('not-scrollable', isOpen);
+};
+
+openMenuButton.addEventListener('click', () => toggleMenu(true));
+closeMenuButton.addEventListener('click', () => toggleMenu(false));
+mobileMenuWrapper.addEventListener('click', () => toggleMenu(false));
