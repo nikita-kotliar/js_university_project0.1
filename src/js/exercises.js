@@ -30,7 +30,7 @@ fetchFilters();
 
 refs.filters.addEventListener('click', onFilterChange);
 refs.exercises.addEventListener('click', onExerciseClick);
-refs.searchForm.addEventListener('input', onSearch);
+refs.searchForm.addEventListener('submit', onSearch);
 refs.pagination.addEventListener('click', onPaginationClick);
 
 async function fetchFilters(reset = true) {
@@ -154,10 +154,15 @@ async function fetchExercises(reset = true) {
 }
 
 function onSearch(e) {
-  keyWord = e.target.value.trim().toLowerCase();
+  e.preventDefault();
+
+  const input = refs.searchForm.elements.searchQuery;
+  keyWord = input.value.trim().toLowerCase();
+
   page = 1;
   fetchExercises(true);
 }
+
 
 function renderPagination(totalPages) {
   if (totalPages <= 1) {
@@ -230,5 +235,7 @@ function showNoResults() {
 }
 
 function capitalize(str) {
-  return str[0].toUpperCase() + str.slice(1);
+  const clean = str.trim();
+  return clean[0].toUpperCase() + clean.slice(1);
 }
+
