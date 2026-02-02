@@ -1,5 +1,6 @@
 import { addExerciseRatingById } from './api.js';
-import iziToast from 'izitoast'; 
+import iziToast from 'izitoast';
+import handlerStartBtn from './exercises-modal.js';
 
 const refs = {
   closeBtn: document.getElementById('form-close-btn'),
@@ -13,12 +14,19 @@ const refs = {
 };
 
 let exerciseId = null;
+let previousExercise = null;
 
 const feedback = {
   rate: 0,
   email: '',
   comment: '',
 };
+
+function handleEscClose(e) {
+  if (e.key === 'Escape') {
+    closeRateModal(true); 
+  }
+}
 
 const resetForm = () => {
   refs.form.reset();
@@ -27,10 +35,17 @@ const resetForm = () => {
   refs.stars.forEach(star => (star.style.fill = 'var(--white-20)'));
 };
 
-refs.closeBtn.onclick = () => refs.backdrop.classList.remove('is-open');
+function closeRateModal(returnCard = false) {
+  refs.backdrop.classList.remove('is-open');
+  document.removeEventListener('keydown', handleEscClose);
+  if (returnCard && previousExercise) {
+    handlerStartBtn(previousExercise);
+  }
+}
 
+refs.closeBtn.onclick = () => closeRateModal(true);
 refs.backdrop.onclick = e => {
-  if (e.target === refs.backdrop) refs.backdrop.classList.remove('is-open');
+  if (e.target === refs.backdrop) closeRateModal(true);
 };
 
 refs.ratingWrapper.onclick = ({ target }) => {
@@ -45,9 +60,11 @@ refs.ratingWrapper.onclick = ({ target }) => {
   });
 };
 
-export const handlerOpenRate = id => {
+export const handlerOpenRate = (id, exercise = null) => {
   exerciseId = id;
+  previousExercise = exercise;
   refs.backdrop.classList.add('is-open');
+  document.addEventListener('keydown', handleEscClose);
 };
 
 refs.form.onsubmit = async e => {
@@ -79,7 +96,7 @@ refs.form.onsubmit = async e => {
       position: 'topRight',
     });
     resetForm();
-    refs.backdrop.classList.remove('is-open');
+    closeRateModal(); 
   } catch ({ message }) {
     iziToast.error({
       title: 'Error',

@@ -7,13 +7,18 @@ const cardBackdrop = document.querySelector('.exr-card-backdrop');
 const capitalizeFirstLetter = str =>
   `${str.charAt(0).toUpperCase()}${str.slice(1)}`;
 
+let currentExercise = null; // для можливості повернення з рейтингу
+
 export default function handlerStartBtn(exercise, isFav = false) {
+  currentExercise = exercise;
   const favourite = isFav || isFavorite(exercise._id);
 
   renderModal(exercise, favourite);
 
   cardBackdrop.classList.add('card-is-open');
   document.body.classList.add('not-scrollable');
+
+  document.addEventListener('keydown', handleEscClose);
 }
 
 function renderModal(data, initialFavourite) {
@@ -112,23 +117,28 @@ function renderModal(data, initialFavourite) {
       <use href="/js_university_project0.1/iconic.svg#icon-heart"></use>
     </svg>
   `;
-
     checkStorage();
   });
-
 
   document.getElementById('close-card').onclick = closeModal;
   cardBackdrop.onclick = e => e.target === cardBackdrop && closeModal();
 
   document.querySelector('.give-rating-btn').onclick = () => {
     closeModal();
-    handlerOpenRate(data._id);
+    handlerOpenRate(data._id, currentExercise); // передамо exercise для повернення
   };
+}
+
+function handleEscClose(e) {
+  if (e.key === 'Escape') {
+    closeModal();
+  }
 }
 
 function closeModal() {
   cardBackdrop.classList.remove('card-is-open');
   document.body.classList.remove('not-scrollable');
+  document.removeEventListener('keydown', handleEscClose);
 }
 
 function paintStars(rating) {
