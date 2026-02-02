@@ -279,7 +279,6 @@
 
 .favourite_exercises .no_cards_wrapper {
   text-align: center;
-  width: 554px;
 }
 
 .favourite_exercises .no_cards_wrapper-container{
@@ -316,9 +315,6 @@
 
 
 @media (max-width: 1439px) {
-  .favourite_exercises .container-fav .no_cards_wrapper {
-    margin: 0;
-  }
   .favourite_exercises .pagination-cards {
     width: 100%;
     flex-wrap: wrap;
