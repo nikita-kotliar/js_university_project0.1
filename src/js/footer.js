@@ -1,4 +1,5 @@
 import { postSubscriptions } from './api.js';
+import iziToast from 'izitoast'; 
 
 const email = document.querySelector('input[name=email]');
 const submitBtnFooter = document.querySelector('.footer-send-button');
@@ -31,15 +32,28 @@ submitBtnFooter.addEventListener('click', async e => {
   try {
     await postSubscriptions(email.value);
 
-    alert('Success! Welcome to energy.flow world!');
+    iziToast.success({
+      title: 'Success',
+      message: 'Welcome to energy.flow world!',
+      position: 'topRight',
+    });
+
     email.value = '';
     submitBtnFooter.disabled = true;
     localStorage.removeItem(STORAGE_KEY);
   } catch (error) {
     if (error.message === 'EMAIL_EXISTS') {
-      alert('Email already exists');
+      iziToast.warning({
+        title: 'Warning',
+        message: 'Email already exists',
+        position: 'topRight',
+      });
     } else {
-      alert('Something went wrong! Please try again later');
+      iziToast.error({
+        title: 'Error',
+        message: 'Something went wrong! Please try again later',
+        position: 'topRight',
+      });
     }
   }
 });

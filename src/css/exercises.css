@@ -8,6 +8,10 @@
   font-size: 44px;
   line-height: 48px;
 }
+
+.exercises-section {
+  margin-bottom: 132px;
+}
 .exercises-section .exercises-title span {
   font-size: 24px;
   line-height: 32px;
@@ -53,7 +57,6 @@
   bottom: -10px;
   opacity: 0;
 }
-
 
 .exercises-section .filter button.active-btn::before {
   content: '';
@@ -320,8 +323,6 @@
   fill: transparent;
 }
 
-
-
 .exercises-section .exercises-cards {
   display: flex;
   row-gap: 32px;
@@ -428,6 +429,9 @@
 }
 
 @media (max-width: 1439px) {
+  .exercises-section {
+    margin-bottom: 100px;
+  }
   .exercises-section .exercises-container {
     flex-direction: column-reverse;
     gap: 64px;
@@ -493,6 +497,9 @@
 }
 
 @media (max-width: 767px) {
+  .exercises-section {
+    margin-bottom: 80px;
+  }
   .exercises-section .exercises-title {
     font-size: 28px;
     line-height: 38px;
@@ -513,7 +520,7 @@
     width: 100%;
     height: auto;
   }
-  .exercises-section .exercise img{
+  .exercises-section .exercise img {
     height: unset;
   }
   .exercises-section .quote {

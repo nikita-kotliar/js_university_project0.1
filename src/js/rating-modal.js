@@ -1,4 +1,5 @@
 import { addExerciseRatingById } from './api.js';
+import iziToast from 'izitoast'; 
 
 const refs = {
   closeBtn: document.getElementById('form-close-btn'),
@@ -55,15 +56,35 @@ refs.form.onsubmit = async e => {
   feedback.email = refs.email.value.trim();
   feedback.comment = refs.comment.value.trim() || undefined;
 
-  if (!feedback.rate) return alert('Please select a rating');
-  if (!feedback.email) return alert('Please enter your email');
+  if (!feedback.rate) {
+    return iziToast.warning({
+      title: 'Warning',
+      message: 'Please select a rating',
+      position: 'topRight',
+    });
+  }
+  if (!feedback.email) {
+    return iziToast.warning({
+      title: 'Warning',
+      message: 'Please enter your email',
+      position: 'topRight',
+    });
+  }
 
   try {
     await addExerciseRatingById(exerciseId, feedback);
-    alert('Your rating is accepted');
+    iziToast.success({
+      title: 'Success',
+      message: 'Your rating is accepted',
+      position: 'topRight',
+    });
     resetForm();
     refs.backdrop.classList.remove('is-open');
   } catch ({ message }) {
-    alert(`Error: ${message}`);
+    iziToast.error({
+      title: 'Error',
+      message: message,
+      position: 'topRight',
+    });
   }
 };
